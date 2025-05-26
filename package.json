@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "name": "express-blog-api-crud",
+  "version": "1.0.0",
+  "main": "motoBlog.js",
+  "devDependencies": {},
+  "scripts": {
+    "dev": "node --watch motoBlog.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FernandoSalicandro/express-blog-api-crud.git"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FernandoSalicandro/express-blog-api-crud/issues"
+  },
+  "homepage": "https://github.com/FernandoSalicandro/express-blog-api-crud#readme",
+  "description": ""
+}
