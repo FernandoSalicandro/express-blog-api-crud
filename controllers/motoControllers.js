@@ -38,8 +38,25 @@ const show = (req, res) => {
 }
 
 const store = (req,res) => {
-  console.log(req.body)
-    res.send("Moto Aggiunta");
+ const newId = motoArr[motoArr.length-1].id+1;
+ const newMoto = {
+  id : newId,
+  marca: req.body.marca,
+  modello: req.body.modello,
+  cavalli: req.body.cavalli,
+  tipo: req.body.tipo,
+  immagine: req.body.immagine
+};
+
+motoArr.push(newMoto);
+
+console.log(motoArr)
+
+res.status(201);
+res.json(newMoto);
+
+
+  
 }
 
 const update = (req,res)=>{
