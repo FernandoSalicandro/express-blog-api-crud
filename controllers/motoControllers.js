@@ -16,7 +16,6 @@ const index = (req, res) => {
       return res.status(404).json({ error: `Nessuna moto trovata per la marca '${motoFilter}'` });
     }
 
-// SHOW: restituisce una moto specifica per ID
     return res.json(filtered);
   } else {
     return res.json(motoArr);
@@ -64,10 +63,16 @@ const update = (req,res)=>{
 const motoId = Number(req.params.id);
 const result = motoArr.find(moto => moto.id === motoId)
 if(result){;
-    res.send("moto modificata")
+   result.marca = req.body.marca;
+   result.modello = req.body.modello;
+   result.cavalli = req.body.cavalli;
+   result.tipo = req.body.tipo;
+   result.immagine = req.body.immagine;
 } else {
  res.status(404).json({error : "Moto non trovata"})
 }
+
+res.json(result)
 
 }
 
