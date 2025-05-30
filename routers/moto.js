@@ -2,6 +2,8 @@
 import express from "express";
 import motoArr from "../motoBlog.js";
 import motoController from "../controllers/motoControllers.js";
+import { validateMotoData } from "../middlewares/motoMiddlewares.js";
+
 //Creo router
 const router = express.Router();
 
@@ -12,10 +14,10 @@ router.get("/", motoController.index)
 router.get("/:id", motoController.show);
 
 //ROTTA STORE 
-router.post("/", motoController.store)
+router.post("/", validateMotoData,motoController.store)
 
 //ROTTA UPDATE
-router.put("/:id" , motoController.update)
+router.put("/:id" ,validateMotoData, motoController.update)
 
 //ROTTA DESTROY
 router.delete("/:id", motoController.destroy);
